@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:background="@drawable/trip_layout_background"
+    android:layout_marginVertical="@dimen/text_dimen_8"
+    android:layout_marginHorizontal="16dp">
+
+    <TextView
+        android:id="@+id/trip_from_tiime_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Nov 24, 18:00"
+        android:textColor="@color/light_grey"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/trip_from_textview"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/trip_from_textview"
+        app:layout_constraintTop_toBottomOf="@+id/trip_from_textview" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_up_arrow" />
+
+        <ImageView
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:layout_margin="4dp"
+            android:src="@drawable/circle" />
+
+        <ImageView
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:layout_margin="4dp"
+            android:src="@drawable/circle" />
+
+        <ImageView
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:layout_margin="4dp"
+            android:src="@drawable/circle" />
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_down_arrow" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/trip_from_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Stare Maistro"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_dimen_18"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/trip_to_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Meupark st"
+        android:textSize="@dimen/text_dimen_18"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/trip_to_time_textview"
+        app:layout_constraintEnd_toEndOf="@+id/trip_to_time_textview"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
+
+    <TextView
+        android:id="@+id/trip_to_time_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Nov 24, 19:35"
+        android:textColor="@color/light_grey"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
+
+    <TextView
+        android:id="@+id/trip_currency_symbol_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="$"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        app:layout_constraintBaseline_toBaselineOf="@+id/trip_cost_textview"
+        app:layout_constraintEnd_toStartOf="@+id/trip_cost_textview" />
+
+    <TextView
+        android:id="@+id/trip_cost_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="16"
+        android:textColor="@color/white"
+        android:textSize="38sp"
+        app:layout_constraintBottom_toTopOf="@+id/trip_duration_textview"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Total"
+        android:textColor="@color/light_grey"
+
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/trip_duration_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Travel Time 1h 35min"
+        android:textColor="@color/light_grey"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="44dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="27dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
