@@ -1,10 +1,7 @@
 package com.example.agentdesktechassignment;
 
-import android.app.Dialog;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -12,8 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,9 +25,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -45,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
     LiveData<RiderProfile> riderProfile;
 
     List<Trips> tripsList;
-    Button reload_button;
 
 
     TextView person_name_tv, person_location_tv, person_t_rided_tv, person_freerides_tv, person_credit_tv;
@@ -73,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
         tripsList = new ArrayList<>();
 
-        MainActivityViewModel model= ViewModelProviders.of(this).get(MainActivityViewModel.class);
+        MainActivityViewModel model = ViewModelProviders.of(this).get(MainActivityViewModel.class);
 
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
@@ -85,14 +76,13 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
 
-        fetchData(jsonPlaceHolderApi,model);
+        fetchData(jsonPlaceHolderApi, model);
 
 
     }
 
-    private void fetchData(JsonPlaceHolderApi jsonPlaceHolderApi,MainActivityViewModel model) {
-
-        riderProfile=model.getRiderProfile(jsonPlaceHolderApi);
+    private void fetchData(JsonPlaceHolderApi jsonPlaceHolderApi, MainActivityViewModel model) {
+        riderProfile = model.getRiderProfile(jsonPlaceHolderApi);
         riderProfile.observe(this, new Observer<RiderProfile>() {
             @Override
             public void onChanged(RiderProfile riderProfile) {

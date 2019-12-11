@@ -32,15 +32,5 @@ public class Trips {
         return trip_duration_in_mins;
     }
 
-    @Override
-    public String toString() {
-        return "Trips{" +
-                "from='" + from + '\'' +
-                ", to='" + to + '\'' +
-                ", from_time='" + from_time + '\'' +
-                ", to_time='" + to_time + '\'' +
-                ", cost=" + cost +
-                ", trip_duration_in_mins='" + trip_duration_in_mins + '\'' +
-                '}';
-    }
+
 }

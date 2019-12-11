@@ -17,12 +17,4 @@ public class Stats {
         return credits;
     }
 
-    @Override
-    public String toString() {
-        return "Stats{" +
-                "rides='" + rides + '\'' +
-                ", free_rides='" + free_rides + '\'' +
-                ", credits=" + credits +
-                '}';
-    }
 }

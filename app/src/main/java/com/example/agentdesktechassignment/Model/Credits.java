@@ -17,12 +17,5 @@ public class Credits {
         return currency_symbol;
     }
 
-    @Override
-    public String toString() {
-        return "Credits{" +
-                "value='" + value + '\'' +
-                ", currency='" + currency + '\'' +
-                ", currency_symbol='" + currency_symbol + '\'' +
-                '}';
-    }
+
 }

@@ -32,15 +32,5 @@ public class Profile {
         return Country;
     }
 
-    @Override
-    public String toString() {
-        return "Profile{" +
-                "first_name='" + first_name + '\'' +
-                ", middle_name='" + middle_name + '\'' +
-                ", last_name='" + last_name + '\'' +
-                ", profile_image='" + profile_image + '\'' +
-                ", city='" + city + '\'' +
-                ", Country='" + Country + '\'' +
-                '}';
-    }
+
 }

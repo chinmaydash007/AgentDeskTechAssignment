@@ -17,12 +17,5 @@ public class Cost {
         return currency_symbol;
     }
 
-    @Override
-    public String toString() {
-        return "Cost{" +
-                "value='" + value + '\'' +
-                ", currency='" + currency + '\'' +
-                ", currency_symbol='" + currency_symbol + '\'' +
-                '}';
-    }
+
 }

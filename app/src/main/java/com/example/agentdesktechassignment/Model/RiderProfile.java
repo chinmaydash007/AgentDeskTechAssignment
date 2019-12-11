@@ -17,12 +17,5 @@ public class RiderProfile {
         return data;
     }
 
-    @Override
-    public String toString() {
-        return "RiderProfile{" +
-                "message='" + message + '\'' +
-                ", success='" + success + '\'' +
-                ", data=" + data +
-                '}';
-    }
+
 }
