@@ -12,7 +12,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivityViewModel extends ViewModel {
-    JsonPlaceHolderApi jsonPlaceHolderApi;
     private static final String TAG = "MainActivityViewModel";
     MutableLiveData<RiderProfile> riderProfile;
 
