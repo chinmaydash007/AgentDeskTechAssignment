@@ -11,3 +11,4 @@
 **Here the link to the screenshot.**
 _https://drive.google.com/open?id=1IJlM5kPE48BbW3gODhbE994oyfeEf0UW_
 <a href="https://drive.google.com/open?id=1IJlM5kPE48BbW3gODhbE994oyfeEf0UW"><img src="https://drive.google.com/open?id=1IJlM5kPE48BbW3gODhbE994oyfeEf0UW" style="width: 500px; max-width: 100%; height: auto" title="Click for the larger version." /></a>
+<a href="https://drive.google.com/uc?export=view&id=<1IJlM5kPE48BbW3gODhbE994oyfeEf0UW>"><img src="https://drive.google.com/uc?export=view&id=<1IJlM5kPE48BbW3gODhbE994oyfeEf0UW>" style="width: 500px; max-width: 100%; height: auto" title="Click for the larger version." /></a>
