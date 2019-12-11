@@ -1,9 +1,9 @@
-package com.example.agentdesktechassignment;
+package com.example.agentdesktechassignment.Model;
 
 public class Stats {
-    String rides;
-    String free_rides;
-    Credits credits;
+    private String rides;
+    private String free_rides;
+    private Credits credits;
 
     public String getRides() {
         return rides;

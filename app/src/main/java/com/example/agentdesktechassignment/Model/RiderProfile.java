@@ -1,9 +1,9 @@
-package com.example.agentdesktechassignment;
+package com.example.agentdesktechassignment.Model;
 
 public class RiderProfile {
-    String message;
-    String success;
-    Data data;
+    private String message;
+    private String success;
+    private Data data;
 
     public String getMessage() {
         return message;

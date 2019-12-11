@@ -1,6 +1,6 @@
 package com.example.agentdesktechassignment;
 
-import java.util.List;
+import com.example.agentdesktechassignment.Model.RiderProfile;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

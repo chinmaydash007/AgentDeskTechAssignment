@@ -1,9 +1,9 @@
-package com.example.agentdesktechassignment;
+package com.example.agentdesktechassignment.Model;
 
-public class Cost {
-    String value;
-    String currency;
-    String currency_symbol;
+public class Credits {
+    private String value;
+    private String currency;
+    private String currency_symbol;
 
     public String getValue() {
         return value;
@@ -19,7 +19,7 @@ public class Cost {
 
     @Override
     public String toString() {
-        return "Cost{" +
+        return "Credits{" +
                 "value='" + value + '\'' +
                 ", currency='" + currency + '\'' +
                 ", currency_symbol='" + currency_symbol + '\'' +

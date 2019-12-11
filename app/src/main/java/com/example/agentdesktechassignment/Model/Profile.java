@@ -1,12 +1,12 @@
-package com.example.agentdesktechassignment;
+package com.example.agentdesktechassignment.Model;
 
 public class Profile {
-    String first_name;
-    String middle_name;
-    String last_name;
-    String profile_image;
-    String city;
-    String Country;
+    private String first_name;
+    private String middle_name;
+    private String last_name;
+    private String profile_image;
+    private String city;
+    private String Country;
 
     public String getFirst_name() {
         return first_name;

@@ -1,13 +1,12 @@
-package com.example.agentdesktechassignment;
+package com.example.agentdesktechassignment.Model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Data {
-    Profile profile;
-    Stats stats;
-    List<Trips> trips;
-    Theme theme;
+    private Profile profile;
+    private Stats stats;
+    private List<Trips> trips;
+    private Theme theme;
 
     public Profile getProfile() {
         return profile;

@@ -10,11 +10,21 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.agentdesktechassignment.Adapter.TripAdapter;
+import com.example.agentdesktechassignment.Model.Data;
+import com.example.agentdesktechassignment.Model.Profile;
+import com.example.agentdesktechassignment.Model.RiderProfile;
+import com.example.agentdesktechassignment.Model.Stats;
+import com.example.agentdesktechassignment.Model.Trips;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "test";
     TripAdapter tripAdapter;
     RecyclerView trip_recyclerView;
-    RiderProfile riderProfile;
+    LiveData<RiderProfile> riderProfile;
 
     List<Trips> tripsList;
     Button reload_button;
@@ -63,6 +73,8 @@ public class MainActivity extends AppCompatActivity {
 
         tripsList = new ArrayList<>();
 
+        MainActivityViewModel model= ViewModelProviders.of(this).get(MainActivityViewModel.class);
+
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         trip_recyclerView.setLayoutManager(linearLayoutManager);
@@ -71,52 +83,28 @@ public class MainActivity extends AppCompatActivity {
         retrofit = new Retrofit.Builder().baseUrl("https://gist.githubusercontent.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-
-
         jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
 
-        fetchData();
+        fetchData(jsonPlaceHolderApi,model);
 
 
     }
 
-    private void fetchData() {
+    private void fetchData(JsonPlaceHolderApi jsonPlaceHolderApi,MainActivityViewModel model) {
 
-        final Call<RiderProfile> riderProfileCall = jsonPlaceHolderApi.getProfile("iranjith4/522d5b466560e91b8ebab54743f2d0fc/raw/7b108e4aaac287c6c3fdf93c3343dd1c62d24faf/radius-mobile-intern.json");
-        riderProfileCall.enqueue(new Callback<RiderProfile>() {
+        riderProfile=model.getRiderProfile(jsonPlaceHolderApi);
+        riderProfile.observe(this, new Observer<RiderProfile>() {
             @Override
-            public void onResponse(Call<RiderProfile> call, Response<RiderProfile> response) {
-                if (!response.isSuccessful()) {
-                    Log.d(TAG, String.valueOf(response.code()));
+            public void onChanged(RiderProfile riderProfile) {
+                SetData(riderProfile);
 
-                }
-                riderProfile = response.body();
-
-                if (riderProfile.message.equals("Success")) {
-                    SetData();
-                } else {
-                    Dialog dialog = new Dialog(MainActivity.this);
-                    dialog.setContentView(R.layout.reload_dialog);
-                    dialog.setCancelable(false);
-                    reload_button = dialog.findViewById(R.id.reload);
-                    reload_button.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            fetchData();
-                        }
-                    });
-                }
-            }
-
-            @Override
-            public void onFailure(Call<RiderProfile> call, Throwable t) {
-                Log.d(TAG, t.getMessage());
             }
         });
+
     }
 
 
-    private void SetData() {
+    private void SetData(RiderProfile riderProfile) {
         for (Trips trips : riderProfile.getData().getTrips()) {
             tripsList.add(trips);
         }
@@ -132,10 +120,10 @@ public class MainActivity extends AppCompatActivity {
 
         person_name_tv.setText(profile.getFirst_name() + " " + profile.getLast_name());
         person_location_tv.setText(profile.getCity() + ", " + profile.getCountry());
-        person_t_rided_tv.setText(stats.rides);
-        person_freerides_tv.setText(stats.free_rides);
+        person_t_rided_tv.setText(stats.getRides());
+        person_freerides_tv.setText(stats.getFree_rides());
         person_credit_tv.setText(stats.getCredits().getCurrency_symbol() + stats.getCredits().getValue());
-        Glide.with(MainActivity.this).load(profile.middle_name).into(profile_image);
+        Glide.with(MainActivity.this).load(profile.getMiddle_name()).into(profile_image);
     }
 }
 

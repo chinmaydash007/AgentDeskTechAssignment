@@ -10,8 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.agentdesktechassignment.Model.Trips;
 import com.example.agentdesktechassignment.R;
-import com.example.agentdesktechassignment.Trips;
 
 import java.text.SimpleDateFormat;
 import java.time.Duration;

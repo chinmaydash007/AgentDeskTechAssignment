@@ -1,8 +1,8 @@
-package com.example.agentdesktechassignment;
+package com.example.agentdesktechassignment.Model;
 
 public class Theme {
-    String dark_colour;
-    String light_colour;
+    private String dark_colour;
+    private String light_colour;
 
     public String getDark_colour() {
         return dark_colour;
