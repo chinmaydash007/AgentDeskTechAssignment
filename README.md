@@ -2,7 +2,7 @@
 ## The goal was to make a app which can request the data from the using API and show it in the activity.
 
 ---
-##LIBRARY USED
+LIBRARY USED
 ---
 1. Retrofit
 2. CircleImageView
